@@ -1,3 +1,4 @@
+// MILESTONE 0: Creare l'array di oggetti con le informazioni fornite.
 const teamMembers = [
     {
         name: "Wayne Barnett",
@@ -41,3 +42,15 @@ for (let i = 0; i < teamMembers.length; i++) {
     console.log(`Foto: ${member.photo}`);
     console.log('---');
 }
+
+// MILESTONE 2 e BONUS 1 e BONUS 2: Visualizzazione nel DOM
+teamMembers.forEach(member => {
+    const memberInfo = `
+                <div class="card">
+                    <img src="img/${member.photo}" alt="${member.name}">
+                    <p><strong>Nome:</strong> ${member.name}</p>
+                    <p><strong>Ruolo:</strong> ${member.role}</p>
+                </div>
+            `;
+    teamContainer.innerHTML += memberInfo;
+});
